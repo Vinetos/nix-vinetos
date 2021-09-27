@@ -2,8 +2,8 @@
 
 let
     wallpaper = builtins.fetchurl {
-      url = "https://wallpaperaccess.com/full/569813.png";
-      sha256 = "1hl17xd2507dyylckzdbfzivaz8mfs2yr8c1bs11pda23wh6n327";
+      url = "https://marmotamaps.com/de/fx/wallpaper/download/faszinationen/Marmotamaps_Wallpaper_Berchtesgaden_Desktop_1920x1080.jpg";
+      sha256 = "0y93kln3bxhi7jyq0lcx08xh0zlxkjpymwx52z64whz9ijvdmdgb";
     };
 
    ws1 = "";
