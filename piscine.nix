@@ -12,6 +12,7 @@ in {
     cmake
     gnumake
     jetbrains.clion
+    man-pages
   ];
 
   programs = {
