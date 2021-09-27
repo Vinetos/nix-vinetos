@@ -3,7 +3,7 @@
 let
     wallpaper = builtins.fetchurl {
       url = "https://wallpaperaccess.com/full/569813.png";
-      sha256 = "206cce815ed45a9b4176141fa500cc81165b16b195b13c10095844f5c9570a29";
+      sha256 = "1hl17xd2507dyylckzdbfzivaz8mfs2yr8c1bs11pda23wh6n327";
     };
 
    ws1 = "";
@@ -26,13 +26,8 @@ in
     modifier = "Mod4";
     bars = [];
 		
-    window.border = 0;
+    window.border = 1;
 		
-    gaps = {
-      inner = 12;
-      outer = 0;
-    };
-    
     keybindings = lib.mkOptionDefault {
       "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
       "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
@@ -84,7 +79,11 @@ in
       }
 
       {
-        command = "systemctl --user restart polybar";
+        command = "polybar top&";
+        always = false;
+      }
+      {
+        command = "polybar-msg cmd restart";
         always = true;
       }
 

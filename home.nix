@@ -66,7 +66,7 @@ in
     git = {
       enable = true;
       userName = "Valentin Chassignol";
-      userEmail = "Vinetosdev"+"@"+"gmail"+"."+"com";
+      userEmail = "valentin.chassignol@gmail.com";
     };
   };
 
