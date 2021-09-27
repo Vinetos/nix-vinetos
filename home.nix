@@ -13,6 +13,7 @@ in
   imports = [
     ./battery.nix
     ./discord.nix
+    ./piscine.nix
   ];
 
   home.packages = with pkgs; [
@@ -36,19 +37,11 @@ in
     gitAndTools.gitflow
     git-lfs
     nodejs
-    maven
+    #maven
     jdk11
     #jetbrains.idea-ultimate
     curl
     p7zip
-
-    # 4 school
-    #jetbrains.clion
-    #jetbrains.webstorm
-    gnumake
-    cmake
-    gcc
-    gdb
 
     # Fonts
     font-awesome

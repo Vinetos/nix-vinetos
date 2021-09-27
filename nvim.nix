@@ -49,6 +49,11 @@
 
     " reload vim.rc
     nnoremap <Leader>vr :source $MYVIMRC<CR>	" reload
+
+    """
+    " Auto reformat clang
+    """
+    autocmd FileType c ClangFormatAutoEnable
   '';
 
   plugins = with pkgs.vimPlugins; [ 
@@ -57,6 +62,8 @@
     vim-airline-themes
     lightline-vim
     vim-devicons
+    vim-clang-format
+    ayu-vim
     nerdtree
     fzf-vim
     coc-nvim
