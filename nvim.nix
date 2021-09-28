@@ -72,5 +72,6 @@
     coc-nvim
     coc-pairs
     coc-yaml
+    DoxygenToolkit-vim
   ];
 }

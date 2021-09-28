@@ -54,8 +54,8 @@ in
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "vinetos";
-  home.homeDirectory = "/home/vinetos";
+  home.username = "valentin.chassignol";
+  home.homeDirectory = "/home/valentin.chassignol";
 
   programs = {
     home-manager.enable = true;
@@ -80,6 +80,7 @@ in
       enableSshSupport = true;
       pinentryFlavor = "curses";
     };
+    picom.enable = true;
   };
 
   xsession.windowManager.i3 = import ./i3.nix {inherit pkgs lib; };
