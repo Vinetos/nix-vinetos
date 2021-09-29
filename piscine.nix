@@ -1,17 +1,14 @@
 { config, pkgs, ... }:
 
 let 
-  url = https://discord.com/api/download?platform=linux&format=tar.gz;
+  gccBase = "gcc -Wextra -Wall -Werror -std=c99 -pedantic";
 
 in {
   home.packages = with pkgs; [
     gdb
     gcc
-    #clang
     clang-tools
-    cmake
     gnumake
-    jetbrains.clion
     man-pages
   ];
 
@@ -24,7 +21,8 @@ in {
        shellAliases = {
          ll = "ls -lh";
          la = "ls -a";
-         compile = "gcc -Wextra -Wall -Werror -std=c99 -pedantic";
+         ccc = gccBase; 
+         ddd = "${gccBase} -g";
        };
      };
   };

@@ -8,7 +8,7 @@ let
 
    ws1 = "";
    ws2 = "";
-   ws3 = "";
+   ws3 = "";
    ws4 = "";
    ws5 = "";
    ws6 = "";
@@ -20,7 +20,7 @@ let
 in
 {
   enable = true;
-  package = pkgs.i3-gaps;
+  package = pkgs.i3;
   
   config = rec {
     modifier = "Mod4";
@@ -57,9 +57,6 @@ in
 
       # Lock
       "${modifier}+x" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy -p -t \"System Locked Down\"";
-      
-      # Screenshot
-      "Print" = "exec ${pkgs.shutter}/bin/shutter -s -e";
       
       # Brightness
       "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U 5";

@@ -12,24 +12,17 @@ in
 
   imports = [
     ./battery.nix
-    ./discord.nix
     ./piscine.nix
   ];
 
   home.packages = with pkgs; [
     # Overview
-    htop
     neofetch
     feh
     gnupg
-    netcat
-    #gnome3.thunar
 
      # Tools
     i3lock-fancy
-    pavucontrol
-    arandr
-    gnome3.networkmanagerapplet
     libnotify
 
     # Dev tools
@@ -37,25 +30,18 @@ in
     gitAndTools.gitflow
     git-lfs
     nodejs
-    #maven
-    jdk11
-    #jetbrains.idea-ultimate
-    curl
-    p7zip
 
     # Fonts
     font-awesome
     fira-code
     fira-code-symbols
-
-    # Fun
-    spotify
   ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "valentin.chassignol";
   home.homeDirectory = "/home/valentin.chassignol";
+  home.keyboard.variant = "intl";
 
   programs = {
     home-manager.enable = true;
