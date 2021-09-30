@@ -35,6 +35,9 @@ in
     font-awesome
     fira-code
     fira-code-symbols
+
+    # Cool
+    spotify
   ];
 
   # Home Manager needs a bit of information about you and the

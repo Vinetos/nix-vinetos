@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  gccBase = "gcc -Wextra -Wall -Werror -std=c99 -pedantic";
+  gccBase = "gcc -Wextra -Wall -Werror -std=c99 -pedantic *.c";
 
 in {
   home.packages = with pkgs; [
@@ -23,6 +23,8 @@ in {
          la = "ls -a";
          ccc = gccBase; 
          ddd = "${gccBase} -g";
+         mkcdv = ''mkdir "$1" && cd "$1" && vim "$1"'';
+         ttt = "tar xvf ~/Downloads/";
        };
      };
   };
