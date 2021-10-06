@@ -30,7 +30,7 @@
 
     shell = {
       program = "${pkgs.fish}/bin/fish";
-      args = [ "--init-command" "echo; neofetch; echo" ];
+      args = [ "--init-command" "echo; neofetch; echo; eval (ssh-agent -c)" ];
     };
 
     colors = {

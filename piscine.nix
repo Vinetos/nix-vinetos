@@ -22,9 +22,9 @@ in {
          ll = "ls -lh";
          la = "ls -a";
          ccc = gccBase; 
-         ddd = "${gccBase} -g";
-         mkcdv = ''mkdir "$1" && cd "$1" && vim "$1"'';
-         ttt = "tar xvf ~/Downloads/";
+         ddd = "${gccBase} -g -fsanitize=address";
+         ttt = "${gccBase} -lcriterion";
+         tg = "git tag | grep ";
        };
      };
   };
