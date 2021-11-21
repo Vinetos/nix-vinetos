@@ -1,17 +1,19 @@
 { config, pkgs, ... }:
 
 let 
-  url = https://discord.com/api/download?platform=linux&format=tar.gz;
+  gccBase = "gcc -Wextra -Wall -Werror -std=c99 -pedantic *.c";
 
 in {
   home.packages = with pkgs; [
     gdb
     gcc
-    #clang
     clang-tools
-    cmake
-    gnumake
-    jetbrains.clion
+    valgrind
+    man-pages
+    criterion
+    flex
+    meson
+    ninja
   ];
 
   programs = {
@@ -23,7 +25,10 @@ in {
        shellAliases = {
          ll = "ls -lh";
          la = "ls -a";
-         compile = "gcc -Wextra -Wall -Werror -std=c99 -pedantic";
+         ccc = gccBase; 
+         ddd = "${gccBase} -g -fsanitize=address";
+         ttt = "${gccBase} -lcriterion";
+         tg = "git tag | grep ";
        };
      };
   };

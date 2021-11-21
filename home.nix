@@ -23,7 +23,7 @@ in
     feh
     gnupg
     netcat
-    #gnome3.thunar
+    xfce.thunar
 
      # Tools
     i3lock-fancy
@@ -39,7 +39,8 @@ in
     nodejs
     #maven
     jdk11
-    #jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
+    jetbrains.clion
     curl
     p7zip
 
@@ -50,6 +51,9 @@ in
 
     # Fun
     spotify
+    teams
+    thunderbird
+    flameshot
   ];
 
   # Home Manager needs a bit of information about you and the

@@ -1,9 +1,9 @@
 { pkgs, lib, ... }:
 
 let
-    wallpaper = builtins.fetchurl {
-      url = "https://wallpaperaccess.com/full/569813.png";
-      sha256 = "206cce815ed45a9b4176141fa500cc81165b16b195b13c10095844f5c9570a29";
+  wallpaper = builtins.fetchurl {
+      url = "https://marmotamaps.com/de/fx/wallpaper/download/faszinationen/Marmotamaps_Wallpaper_Berchtesgaden_Desktop_1920x1080.jpg";
+      sha256 = "0y93kln3bxhi7jyq0lcx08xh0zlxkjpymwx52z64whz9ijvdmdgb";
     };
 
    ws1 = "";
@@ -26,10 +26,10 @@ in
     modifier = "Mod4";
     bars = [];
 		
-    window.border = 0;
+    window.border = 1;
 		
     gaps = {
-      inner = 12;
+      inner = 0;
       outer = 0;
     };
     
@@ -64,7 +64,7 @@ in
       "${modifier}+x" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy -p -t \"System Locked Down\"";
       
       # Screenshot
-      "Print" = "exec ${pkgs.shutter}/bin/shutter -s -e";
+      "Print" = "exec ${pkgs.flameshot}/bin/flameshot";
       
       # Brightness
       "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U 5";
