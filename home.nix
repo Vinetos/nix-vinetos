@@ -51,7 +51,6 @@ in
 
     # Fun
     spotify
-    teams
     thunderbird
     flameshot
   ];
@@ -65,7 +64,8 @@ in
     home-manager.enable = true;
     neovim = import ./nvim.nix { inherit pkgs; };
 
-    alacritty = import ./alacritty.nix { inherit pkgs; };    
+    alacritty = import ./alacritty.nix { inherit pkgs; };
+    rofi = import ./rofi.nix { inherit pkgs; inherit config; };
 
     git = {
       enable = true;
@@ -77,6 +77,12 @@ in
   fonts.fontconfig.enable = true;
   
   services = {
+    picom = {
+      enable = true;
+      activeOpacity = "1.0";
+      inactiveOpacity = "1.0";
+      menuOpacity = "1.0";
+    };
     polybar = import ./polybar.nix { inherit pkgs; };
     gpg-agent = {
       enable = true;

@@ -2,13 +2,13 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://marmotamaps.com/de/fx/wallpaper/download/faszinationen/Marmotamaps_Wallpaper_Berchtesgaden_Desktop_1920x1080.jpg";
-      sha256 = "0y93kln3bxhi7jyq0lcx08xh0zlxkjpymwx52z64whz9ijvdmdgb";
+      url = "https://images.hdqwalls.com/wallpapers/mountains-lowpoly-ph.jpg";
+      sha256 = "1qbmii9slrxayi2lcf7i4ik8kkqf33j4msnf4pzjh0r7v05gbab7";
     };
 
    ws1 = "";
    ws2 = "";
-   ws3 = "";
+   ws3 = "";
    ws4 = "";
    ws5 = "";
    ws6 = "";
@@ -35,7 +35,7 @@ in
     
     keybindings = lib.mkOptionDefault {
       "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-      "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
+      "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun -show-icons";
       "${modifier}+Shift+q" = "kill";
 
       # Custom workspaces names
@@ -84,13 +84,11 @@ in
       }
 
       {
-        command = "systemctl --user restart polybar";
-        always = true;
-      }
-
-      {
         command = "${pkgs.i3-gaps}/bin/i3-msg workspace ${ws1}";
-        always = true;
+      }
+      {
+        command = "systemctl --user start polybar";
+        always = false;
       }
     ];
 

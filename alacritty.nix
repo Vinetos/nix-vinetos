@@ -9,16 +9,9 @@
 
     window = {
       title = "Terminal";
-
-      position = {
-        x = 900;
-        y = 350;
-      };
-      dimensions = {
-        lines = 40;
-        columns = 125;
-      };
     };
+
+    background_opacity = 0.9;
 
     font = {
       normal.family = "Fira Code";
@@ -26,7 +19,7 @@
       size = 10.0;
     };
 
-    cursor.style = "Beam";
+    cursor.style = "Underline";
 
     shell = {
       program = "${pkgs.fish}/bin/fish";
