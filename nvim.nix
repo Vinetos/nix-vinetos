@@ -16,6 +16,7 @@
     set smartindent
     set nocompatible
     set mouse=a
+    set guicursor+=n:hor20-Cursor/lCursor
     
     """"""""""""""""""""""""""""""""""""""
     " => File explorer   

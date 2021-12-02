@@ -4,14 +4,13 @@
   enable = true;
 
   settings = {
-    env.TERM = "xterm-256color";
     live_config_reload = true;
 
     window = {
       title = "Terminal";
     };
 
-    background_opacity = 0.9;
+    background_opacity = 0.85;
 
     font = {
       normal.family = "Fira Code";

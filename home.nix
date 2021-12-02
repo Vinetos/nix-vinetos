@@ -13,7 +13,6 @@ in
   imports = [
     ./battery.nix
     ./discord.nix
-    ./piscine.nix
   ];
 
   home.packages = with pkgs; [
@@ -66,6 +65,8 @@ in
 
     alacritty = import ./alacritty.nix { inherit pkgs; };
     rofi = import ./rofi.nix { inherit pkgs; inherit config; };
+
+    fish = import ./fish.nix { inherit pkgs; };
 
     git = {
       enable = true;

@@ -35,7 +35,7 @@ in
 
       "bar/top" = {
         width = "100%";
-        height = 36;
+        height = 30;
         radius = 0;
         fixed-center = true;
 
@@ -60,8 +60,8 @@ in
         font-3 = "Font Awesome 5 Brands:pixelsize=10;1";
 
         modules-left = "i3 xwindow";
-        modules-center = "date";
-        modules-right = "xkeyboard network memory cpu battery powermenu";
+        modules-center = "";
+        modules-right = "xkeyboard network battery date";
 
         tray-position = "right";
         tray-padding = 2;
@@ -151,12 +151,12 @@ in
         interval = 5;
 
         date = "";
-        date-alt = " %Y-%m-%d";
+        date-alt = "%Y-%m-%d";
 
         time = "%I:%M %p";
-        time-alt = "%H:%M:%S";
+        time-alt = "";
 
-        format-prefix = "";
+        format-prefix = "";
         format-prefix-foreground = foreground-alt;
         format-underline = "#00000000";
 

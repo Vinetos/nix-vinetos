@@ -26,10 +26,10 @@ in
     modifier = "Mod4";
     bars = [];
 		
-    window.border = 1;
+    window.border = 0;
 		
     gaps = {
-      inner = 0;
+      inner = 2;
       outer = 0;
     };
     
@@ -84,8 +84,9 @@ in
       }
 
       {
-        command = "${pkgs.i3-gaps}/bin/i3-msg workspace ${ws1}";
+        command = "systemctl --user restart polybar";
       }
+
       {
         command = "systemctl --user start polybar";
         always = false;
