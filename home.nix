@@ -28,7 +28,7 @@ in
     i3lock-fancy
     pavucontrol
     arandr
-    gnome3.networkmanagerapplet
+    pkgs.networkmanagerapplet
     libnotify
 
     # Dev tools
@@ -36,10 +36,9 @@ in
     gitAndTools.gitflow
     git-lfs
     nodejs
-    #maven
-    jdk11
-    jetbrains.idea-ultimate
-    jetbrains.clion
+    maven
+    jdk
+    unstable.jetbrains.idea-ultimate
     curl
     p7zip
 

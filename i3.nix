@@ -64,7 +64,7 @@ in
       "${modifier}+x" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy -p -t \"System Locked Down\"";
       
       # Screenshot
-      "Print" = "exec ${pkgs.flameshot}/bin/flameshot";
+      "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       
       # Brightness
       "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U 5";
@@ -88,7 +88,7 @@ in
       }
 
       {
-        command = "systemctl --user start polybar";
+        command = "${pkgs.i3-gaps}/bin/i3-msg workspace ${ws1}";
         always = false;
       }
     ];
