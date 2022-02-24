@@ -2,8 +2,7 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://images.hdqwalls.com/wallpapers/mountains-lowpoly-ph.jpg";
-      sha256 = "1qbmii9slrxayi2lcf7i4ik8kkqf33j4msnf4pzjh0r7v05gbab7";
+      url = "https://github.com/Vinetos/nix-vinetos/blob/master/background.webp?raw=true";
     };
 
    ws1 = "";

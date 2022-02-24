@@ -8,9 +8,9 @@
 
     window = {
       title = "Terminal";
+      opacity = 0.7;
     };
 
-    background_opacity = 0.85;
 
     font = {
       normal.family = "Fira Code";
