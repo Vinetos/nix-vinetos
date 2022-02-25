@@ -39,8 +39,14 @@ in
     maven
     jdk
     unstable.jetbrains.idea-ultimate
+    unstable.jetbrains.clion
     curl
     p7zip
+    cmake
+    gnumake
+    gcc
+    clang-tools
+    gtest
 
     # Fonts
     font-awesome
@@ -51,6 +57,7 @@ in
     spotify
     thunderbird
     flameshot
+    teams
   ];
 
   # Home Manager needs a bit of information about you and the
