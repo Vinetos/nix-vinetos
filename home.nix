@@ -1,7 +1,9 @@
 { config, pkgs, lib, ... }:
 
 let
-  unstable = import <nixos-unstable> { config.allowUnfree = true; };
+  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+  # sudo nix-channel --update
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   feather-icons = builtins.fetchurl { 
     url = "https://github.com/adi1090x/polybar-themes/blob/46154c5283861a6f0a440363d82c4febead3c818/fonts/panels/icomoon_feather.ttf?raw=true";
     sha256 = "d74dc222a0ee04ebd2a169fed8eb437692a98833c06534f5450400fd024a9bbb";
@@ -30,6 +32,7 @@ in
     arandr
     pkgs.networkmanagerapplet
     libnotify
+    gparted
 
     # Dev tools
     any-nix-shell
@@ -89,7 +92,7 @@ in
       activeOpacity = "1.0";
       inactiveOpacity = "1.0";
       menuOpacity = "1.0";
-    };
+   };
     polybar = import ./polybar.nix { inherit pkgs; };
     gpg-agent = {
       enable = true;
@@ -109,5 +112,5 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.05";
+  home.stateVersion = "21.11";
 }

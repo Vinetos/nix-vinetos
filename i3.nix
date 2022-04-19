@@ -2,7 +2,7 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://github.com/Vinetos/nix-vinetos/blob/master/background.webp?raw=true";
+      url = "https://i.imgur.com/l2jZ7Zc.jpg";
     };
 
    ws1 = "";

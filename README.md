@@ -2,8 +2,8 @@
 
 ## Requirements
 
-- NixOS 20.09
-- [Home Manager](https://github.com/rycee/home-manager) (20.09 channel)
+- NixOS 21.11
+- [Home Manager](https://github.com/rycee/home-manager) (21.11 channel)
 
 ## Usage
 
