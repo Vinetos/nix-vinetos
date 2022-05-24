@@ -33,6 +33,8 @@ in
     pkgs.networkmanagerapplet
     libnotify
     gparted
+    cairo
+    remmina
 
     # Dev tools
     any-nix-shell
@@ -42,25 +44,31 @@ in
     maven
     jdk
     unstable.jetbrains.idea-ultimate
-    unstable.jetbrains.clion
+    unstable.jetbrains.pycharm-professional
     curl
     p7zip
-    cmake
-    gnumake
-    gcc
-    clang-tools
-    gtest
+    docker-compose
+
+    # clang-tools
+    # (hiPrio gcc)
+    # cmake
+    # gnumake
+    # gdb
+    # unstable.jetbrains.clion
+    # nlohmann_json
+    # boost
+    rstudio
 
     # Fonts
     font-awesome
-    fira-code
-    fira-code-symbols
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
 
     # Fun
     spotify
     thunderbird
     flameshot
     teams
+    postman
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -76,6 +84,8 @@ in
     rofi = import ./rofi.nix { inherit pkgs; inherit config; };
 
     fish = import ./fish.nix { inherit pkgs; };
+
+    starship = import ./starship.nix { inherit pkgs; };
 
     git = {
       enable = true;

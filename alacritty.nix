@@ -13,7 +13,7 @@
 
 
     font = {
-      normal.family = "Fira Code";
+      normal.family = "Fira Code Nerd Font";
       normal.style = "Regular";
       size = 10.0;
     };
