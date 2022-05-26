@@ -3,7 +3,11 @@
 let
   wallpaper = builtins.fetchurl {
       url = "https://i.imgur.com/l2jZ7Zc.jpg";
-    };
+  };
+    
+  lockscreen-wallpaper = builtins.fetchurl {
+    url = "https://i.imgur.com/ezOgN0q.jpg";
+  };
 
    ws1 = "1: ";
    ws2 = "2: ";
@@ -60,7 +64,7 @@ in
       "${modifier}+Shift+0" = "move container to workspace ${ws0}";
 
       # Lock
-      "${modifier}+x" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy -p -t \"System Locked Down\"";
+      "${modifier}+l" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen --lock";
       
       # Screenshot
       "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
@@ -81,6 +85,10 @@ in
         always = true;
         notification = false;
       }
+      
+      {
+        command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${lockscreen-wallpaper}";
+      }
 
       {
         command = "systemctl --user restart polybar";
@@ -90,6 +98,7 @@ in
         command = "${pkgs.i3-gaps}/bin/i3-msg workspace ${ws1}";
         always = false;
       }
+
     ];
 
   };

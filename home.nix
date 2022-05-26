@@ -33,7 +33,6 @@ in
     pkgs.networkmanagerapplet
     libnotify
     gparted
-    cairo
     remmina
 
     # Dev tools
@@ -56,9 +55,6 @@ in
     # gdb
     # unstable.jetbrains.clion
     # nlohmann_json
-    # boost
-    rstudio
-
     # Fonts
     font-awesome
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
@@ -109,6 +105,12 @@ in
 
       enableSshSupport = true;
       pinentryFlavor = "curses";
+    };
+
+    betterlockscreen = {
+      enable = true;
+      inactiveInterval = 10;
+      arguments = [ "--blur 0.5"];
     };
   };
 
