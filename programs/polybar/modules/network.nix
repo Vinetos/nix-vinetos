@@ -8,7 +8,8 @@ in
 
     unknown-as-up = true;
 
-    format-connected = "<ramp-signal> <label-connected>";
+    format-connected = "<label-connected>";
+    format-connected-prefix = " ";
     format-connected-prefix-font = 2;
     format-connected-background = color.shades."4";
     format-connected-padding = 2;
@@ -21,9 +22,5 @@ in
 
     label-connected = "%{A1:networkmanager_dmenu &:} %essid%%{A}";
     label-disconnected = "%{A1:networkmanager_dmenu &:} Offline%{A}";
-
-    ramp-signal-0 = "說";
-    ramp-signal-1 = "說";
-    ramp-signal-2 = "說";
 
   }

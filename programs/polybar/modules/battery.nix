@@ -22,17 +22,16 @@ in
 
     format-charging = "<animation-charging> <label-charging>";
     format-charging-background = color.shades."5";
-    format-charging-padding = 2;
+    format-charging-padding = 1;
 
     format-discharging = "<ramp-capacity> <label-discharging>";
     format-discharging-background = color.shades."5";
-    format-discharging-padding = 2;
+    format-discharging-padding = 1;
 
     format-full = "<label-full>";
     format-full-prefix = "  ";
-    format-full-prefix-font = 2;
     format-full-background = color.shades."5";
-    format-full-padding = 2;
+    format-full-padding = 1;
 
 
     label-charging = "%percentage%%";
@@ -44,14 +43,12 @@ in
     ramp-capacity-2 = "  ";
     ramp-capacity-3 = "  ";
     ramp-capacity-4 = "  ";
-    ramp-capacity-font = 2;
 
     animation-charging-0 = "  ";
     animation-charging-1 = "  ";
     animation-charging-2 = "  ";
     animation-charging-3 = "  ";
     animation-charging-4 = "  ";
-    animation-charging-font = 2;
 
     animation-charging-framerate = 750;
 

@@ -77,12 +77,9 @@ in
 
         module-margin-left = 0;
         module-margin-right = 0;
- 
-        font-0 = "Iosevka Nerd Font:pixelsize=10;4";
-        font-1 = "Iosevka Nerd Font:pixelsize=13;4";
-        font-2 = "Font Awesome 6 Free:pixelsize=10;4";
-        font-3 = "Font Awesome 6 Free Solid:pixelsize=10;4";
-        font-4 = "Font Awesome 6 Brands:pixelsize=10;4";
+
+        font-0 = "Iosevka Nerd Font:pixelsize=10;3";
+        font-1 = "Iosevka Nerd Font:style=Medium:size=13;3.9";
 
         modules-left = "workspaces title";
         modules-center = "";

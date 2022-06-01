@@ -51,8 +51,6 @@ in
     # unstable.jetbrains.clion
     # nlohmann_json
     # Fonts
-    font-awesome
-    material-design-icons
     (pkgs.nerdfonts.override { 
       fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; 
     })

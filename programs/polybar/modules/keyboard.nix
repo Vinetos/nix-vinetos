@@ -8,6 +8,7 @@
 
   format = "<label-layout> <label-indicator>";
   format-prefix = " ";
+  format-prefix-font = 2;
   format-background = color.shades."6";
   format-padding = 1;
 

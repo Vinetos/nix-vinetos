@@ -8,8 +8,8 @@
   time-alt = " %a, %d %b %Y";
 
   format = "<label>";
-  format-prefix = " ";
-  format-prefix-font = 2;
+  format-prefix = " ";
+  format-font = 2;
   format-background = color.shades."3";
   format-foreground = color.foreground;
   format-padding = 2;
