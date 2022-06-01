@@ -4,17 +4,12 @@ let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  feather-icons = builtins.fetchurl { 
-    url = "https://github.com/adi1090x/polybar-themes/blob/46154c5283861a6f0a440363d82c4febead3c818/fonts/panels/icomoon_feather.ttf?raw=true";
-    sha256 = "d74dc222a0ee04ebd2a169fed8eb437692a98833c06534f5450400fd024a9bbb";
-  };
 in
 {
   nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./battery.nix
-    ./discord.nix
   ];
 
   home.packages = with pkgs; [
@@ -68,6 +63,9 @@ in
     flameshot
     teams
     postman
+    # Automatic overlay is in ~/.config/nixpkgs/overlays
+    # to stay up-to-date
+    discord
   ];
 
   # Home Manager needs a bit of information about you and the
