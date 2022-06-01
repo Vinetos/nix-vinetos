@@ -80,7 +80,7 @@ in
     home-manager.enable = true;
     neovim = import ./nvim.nix { inherit pkgs; };
 
-    alacritty = import ./alacritty.nix { inherit pkgs; };
+    alacritty = import ./programs/alacritty/alacritty.nix { inherit pkgs; };
     rofi = import ./programs/rofi/rofi.nix { inherit config; };
 
     fish = import ./fish.nix { inherit pkgs; };
