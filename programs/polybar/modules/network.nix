@@ -1,10 +1,8 @@
-{ color }:
-let
-  interface = "wlo1";
-in
-  {
+{ color, interface }:
+
+{
     type = "internal/network";
-    interface = interface;
+    interface = interface.wireless;
 
     unknown-as-up = true;
 

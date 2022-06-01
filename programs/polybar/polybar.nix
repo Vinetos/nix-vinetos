@@ -30,6 +30,12 @@ let
     indicator = "⏽";
   };
 
+  # Network Interfaces
+  interface = {
+    wired = "enp2s0";
+    wireless = "wlo1";
+  };
+
 in
   {
     enable = true;
@@ -126,7 +132,18 @@ in
       "module/sep" = import ./modules/sep.nix { inherit color; };
       "module/title" = import ./modules/title.nix { inherit color; };
       "module/workspaces" = import ./modules/workspaces.nix { inherit color;};
-      "module/network" = import ./modules/network.nix { inherit color;};
+      # TODO: Share these properties
+      "module/wired-network" = {
+          type = "internal/network";
+          interface = interface.wired;
+      };
+
+      "module/wireless-network" = {
+          type = "internal/network";
+          interface = interface.wireless;
+      };
+
+      "module/network" = import ./modules/network.nix { inherit color interface; };
 
      # Bars
      # "module/battery_bar" = import ./bars/battery_bar.nix { inherit bar color; };
