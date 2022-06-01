@@ -96,12 +96,8 @@ in
   services = {
     picom = import ./programs/picom/picom.nix;
     polybar = import ./programs/polybar/polybar.nix { inherit pkgs; };
-    gpg-agent = import ./programs/gpg-agent/gpg-agent.nix; 
-    betterlockscreen = {
-      enable = true;
-      inactiveInterval = 10;
-      arguments = [ "--blur 0.5"];
-    };
+    gpg-agent = import ./programs/gpg-agent/gpg-agent.nix;
+    betterlockscreen = import ./programs/betterlockscreen/betterlockscreen.nix;
   };
 
   xsession.windowManager.i3 = import ./programs/i3/i3.nix {inherit pkgs lib; };
