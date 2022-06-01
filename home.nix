@@ -84,11 +84,7 @@ in
 
     starship = import ./programs/starship/starship.nix;
 
-    git = {
-      enable = true;
-      userName = "Valentin Chassignol";
-      userEmail = "Vinetosdev"+"@"+"gmail"+"."+"com";
-    };
+    git = import ./programs/git/git.nix;
   };
 
   fonts.fontconfig.enable = true;
