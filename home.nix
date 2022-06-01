@@ -94,12 +94,7 @@ in
   fonts.fontconfig.enable = true;
   
   services = {
-    picom = {
-      enable = true;
-      activeOpacity = "1.0";
-      inactiveOpacity = "1.0";
-      menuOpacity = "1.0";
-   };
+    picom = import ./programs/picom/picom.nix;
     polybar = import ./programs/polybar/polybar.nix { inherit pkgs; };
     gpg-agent = {
       enable = true;
