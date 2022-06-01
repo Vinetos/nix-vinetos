@@ -81,7 +81,7 @@ in
     neovim = import ./nvim.nix { inherit pkgs; };
 
     alacritty = import ./alacritty.nix { inherit pkgs; };
-    rofi = import ./rofi.nix { inherit pkgs; inherit config; };
+    rofi = import ./programs/rofi/rofi.nix { inherit config; };
 
     fish = import ./fish.nix { inherit pkgs; };
 
