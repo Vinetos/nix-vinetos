@@ -85,7 +85,7 @@ in
 
     fish = import ./fish.nix { inherit pkgs; };
 
-    starship = import ./starship.nix { inherit pkgs; };
+    starship = import ./programs/starship/starship.nix;
 
     git = {
       enable = true;
