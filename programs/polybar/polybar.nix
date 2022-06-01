@@ -84,9 +84,9 @@ in
         font-3 = "Font Awesome 6 Free Solid:pixelsize=10;4";
         font-4 = "Font Awesome 6 Brands:pixelsize=10;4";
 
-        modules-left = "workspaces sep title";
+        modules-left = "workspaces title";
         modules-center = "";
-        modules-right = "battery network date";
+        modules-right = "keyboard battery network date";
 
         separator = "";
 
@@ -125,6 +125,7 @@ in
       "module/battery" = import ./modules/battery.nix { inherit color; };
       "module/cpu" = import ./modules/cpu.nix { inherit color; };
       "module/date" = import ./modules/date.nix { inherit color; };
+      "module/keyboard" = import ./modules/keyboard.nix { inherit color; };
       "module/sep" = import ./modules/sep.nix { inherit color; };
       "module/title" = import ./modules/title.nix { inherit color; };
       "module/workspaces" = import ./modules/workspaces.nix { inherit color;};
