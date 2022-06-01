@@ -96,13 +96,7 @@ in
   services = {
     picom = import ./programs/picom/picom.nix;
     polybar = import ./programs/polybar/polybar.nix { inherit pkgs; };
-    gpg-agent = {
-      enable = true;
-
-      enableSshSupport = true;
-      pinentryFlavor = "curses";
-    };
-
+    gpg-agent = import ./programs/gpg-agent/gpg-agent.nix; 
     betterlockscreen = {
       enable = true;
       inactiveInterval = 10;
