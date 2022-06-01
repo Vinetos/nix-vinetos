@@ -2,7 +2,7 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://i.imgur.com/l2jZ7Zc.jpg";
+      url = "https://i.redd.it/ncytwtab3f291.jpg";
   };
     
   lockscreen-wallpaper = builtins.fetchurl {

@@ -34,6 +34,7 @@ in
     libnotify
     gparted
     remmina
+    pywal
 
     # Dev tools
     any-nix-shell
@@ -57,7 +58,10 @@ in
     # nlohmann_json
     # Fonts
     font-awesome
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    material-design-icons
+    (pkgs.nerdfonts.override { 
+      fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; 
+    })
 
     # Fun
     spotify
@@ -99,7 +103,7 @@ in
       inactiveOpacity = "1.0";
       menuOpacity = "1.0";
    };
-    polybar = import ./polybar.nix { inherit pkgs; };
+    polybar = import ./programs/polybar/polybar.nix { inherit pkgs; };
     gpg-agent = {
       enable = true;
 
