@@ -118,7 +118,7 @@ in
     };
   };
 
-  xsession.windowManager.i3 = import ./i3.nix {inherit pkgs lib; };
+  xsession.windowManager.i3 = import ./programs/i3/i3.nix {inherit pkgs lib; };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
