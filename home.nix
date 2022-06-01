@@ -37,7 +37,6 @@ in
     pywal
 
     # Dev tools
-    any-nix-shell
     gitAndTools.gitflow
     git-lfs
     nodejs
@@ -83,7 +82,7 @@ in
     alacritty = import ./programs/alacritty/alacritty.nix { inherit pkgs; };
     rofi = import ./programs/rofi/rofi.nix { inherit config; };
 
-    fish = import ./fish.nix { inherit pkgs; };
+    fish = import ./programs/fish/fish.nix { inherit pkgs; };
 
     starship = import ./programs/starship/starship.nix;
 

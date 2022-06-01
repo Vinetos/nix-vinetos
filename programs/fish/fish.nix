@@ -3,6 +3,6 @@
 {
   enable = true;
   interactiveShellInit = ''
-    any-nix-shell fish --info-right | source
+    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
   '';
 }
