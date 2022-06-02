@@ -4,6 +4,8 @@ let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  colors = import ./colorschemes.nix;
+  username = "vinetos";
 in
 {
   nixpkgs.config.allowUnfree = true;
@@ -25,7 +27,7 @@ in
     i3lock-fancy
     pavucontrol
     arandr
-    pkgs.networkmanagerapplet
+    networkmanagerapplet
     libnotify
     gparted
     remmina
@@ -43,13 +45,6 @@ in
     p7zip
     docker-compose
 
-    # clang-tools
-    # (hiPrio gcc)
-    # cmake
-    # gnumake
-    # gdb
-    # unstable.jetbrains.clion
-    # nlohmann_json
     # Fonts
     (pkgs.nerdfonts.override { 
       fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; 
@@ -61,6 +56,7 @@ in
     flameshot
     teams
     postman
+
     # Automatic overlay is in ~/.config/nixpkgs/overlays
     # to stay up-to-date
     discord
@@ -68,20 +64,16 @@ in
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "vinetos";
-  home.homeDirectory = "/home/vinetos";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   programs = {
     home-manager.enable = true;
     neovim = import ./programs/nvim/nvim.nix { inherit pkgs; };
-
-    alacritty = import ./programs/alacritty/alacritty.nix { inherit pkgs; };
-    rofi = import ./programs/rofi/rofi.nix { inherit config; };
-
+    alacritty = import ./programs/alacritty/alacritty.nix { inherit pkgs colors; };
+    rofi = import ./programs/rofi/rofi.nix { inherit config colors; };
     fish = import ./programs/fish/fish.nix { inherit pkgs; };
-
     starship = import ./programs/starship/starship.nix;
-
     git = import ./programs/git/git.nix;
   };
 
@@ -89,7 +81,7 @@ in
   
   services = {
     picom = import ./programs/picom/picom.nix;
-    polybar = import ./programs/polybar/polybar.nix { inherit pkgs; };
+    polybar = import ./programs/polybar/polybar.nix { inherit pkgs colors; };
     gpg-agent = import ./programs/gpg-agent/gpg-agent.nix;
     betterlockscreen = import ./programs/betterlockscreen/betterlockscreen.nix;
   };

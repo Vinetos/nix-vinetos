@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colors }:
 
 {
   enable = true;
@@ -27,32 +27,32 @@
 
     colors = {
       primary = {
-        background = "#2D2A2E";
-        foreground = "#FCFCFA";
+        background = colors.dark.black;
+        foreground = colors.dark.white;
       };
       cursor = {
         text   = "0xFF261E";
         cursor = "0xFF261E";
       };
       normal = {
-        black   = "#15191F";
-        red     = "#F865A5";
-        green   = "#29EDBE";
-        yellow  = "#FFC457";
-        blue    = "#33AEFF";
-        magenta = "#AF54FF";
-        cyan    = "#29EDBE";
-        white   = "#B3B7BD";
+        black   = colors.dark.black;
+        red     = colors.dark.red;
+        green   = colors.dark.green;
+        yellow  = colors.dark.yellow;
+        blue    = colors.dark.blue;
+        magenta = colors.dark.magenta;
+        cyan    = colors.dark.cyan;
+        white   = colors.dark.white;
       };
       bright = {
-        black   = "#15191F";
-        red     = "#FF598B";
-        green   = "#1FE0A6";
-        yellow  = "#FFB630";
-        blue    = "#33AEFF";
-        magenta = "#B467F9";
-        cyan    = "#2BCAFC";
-        white   = "#ECF2F2";
+        black   = colors.light.black;
+        red     = colors.light.red;
+        green   = colors.light.green;
+        yellow  = colors.light.yellow;
+        blue    = colors.light.blue;
+        magenta = colors.light.magenta;
+        cyan    = colors.light.cyan;
+        white   = colors.light.white;
       };
     };
   };

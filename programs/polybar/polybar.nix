@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, colors }:
 
 # Inspired from Colorblocks by Aditya Shakya @adi1090x
 # https://github.com/adi1090x/polybar-themes/blob/master/simple/colorblocks
@@ -11,16 +11,7 @@ let
     foreground-alt = "#FFFFFF";
     alpha = "#222";
 
-    shades = {
-      "1" = "#BF360C";
-      "2" = "#D84315";
-      "3" = "#E64A19";
-      "4" = "#F4511E";
-      "5" = "#FF5722";
-      "6" = "#FF7043";
-      "7" = "#FF8A65";
-      "8" = "#FFAB91";
-    };
+    shades = colors.shades;
  
   };
  

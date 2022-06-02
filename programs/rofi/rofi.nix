@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, colors, ... }:
 
 {
   enable = true;
@@ -20,14 +20,14 @@
 
       # TODO: Use global system color
 
-      background =     mkLiteral "#2D142CFF";
-      background-alt = mkLiteral "#2D142CFF";
-      foreground =     mkLiteral "#FFFFFFA6";
+      background =     mkLiteral "${colors.shades."1"}";
+      background-alt = mkLiteral "${colors.shades."1"}";
+      foreground =     mkLiteral "${colors.dark.white}";
       
-      border=      mkLiteral "#EE4540FF";
-      border-alt = mkLiteral "#C92A42FF";
+      border =     mkLiteral "${colors.accent}";
+      border-alt = mkLiteral "${colors.shades."7"}";
 
-      selected = mkLiteral "#510A3299";
+      selected = mkLiteral "${colors.shades."6"}";
       urgent =   mkLiteral "#DA4453FF";
     };
 
