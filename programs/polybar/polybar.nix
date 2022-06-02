@@ -9,7 +9,7 @@ let
     background = "#141C21";
     foreground = "#F5F5F5";
     foreground-alt = "#FFFFFF";
-    alpha = "#00000000";
+    alpha = "#222";
 
     shades = {
       "1" = "#BF360C";
@@ -87,8 +87,8 @@ in
         font-0 = "Iosevka Nerd Font:pixelsize=10;3";
         font-1 = "Iosevka Nerd Font:style=Medium:size=13;3.9";
 
-        modules-left = "workspaces title";
-        modules-center = "";
+        modules-left = "workspaces";
+        modules-center = "title";
         modules-right = "keyboard battery network date";
 
         separator = "";
