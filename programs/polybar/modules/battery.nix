@@ -21,16 +21,16 @@ in
     time-format = "%H:%M";
 
     format-charging = "<animation-charging> <label-charging>";
-    format-charging-background = color.shades."5";
+    format-charging-background = color.shades."4";
     format-charging-padding = 1;
 
     format-discharging = "<ramp-capacity> <label-discharging>";
-    format-discharging-background = color.shades."5";
+    format-discharging-background = color.shades."4";
     format-discharging-padding = 1;
 
     format-full = "<label-full>";
     format-full-prefix = "  ";
-    format-full-background = color.shades."5";
+    format-full-background = color.shades."4";
     format-full-padding = 1;
 
 

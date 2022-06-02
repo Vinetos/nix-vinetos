@@ -4,10 +4,6 @@ let
   wallpaper = builtins.fetchurl {
       url = "https://i.redd.it/ncytwtab3f291.jpg";
   };
-    
-  lockscreen-wallpaper = builtins.fetchurl {
-    url = "https://i.imgur.com/ezOgN0q.jpg";
-  };
 
    ws1 = "1: ";
    ws2 = "2: ";
@@ -74,9 +70,9 @@ in
       "XF86MonBrightnessUp" = "exec ${pkgs.light}/bin/light -A 5";
 
       # Audio
-      "XF86AudioLowerVolume" = "exec \"amixer -q sset Master 1%-\"";
-      "XF86AudioRaiseVolume" = "exec \"amixer -q sset Master 1%+\"";
-      "XF86AudioMute" = "exec \"amixer -q sset Master toggle\"";
+      "XF86AudioLowerVolume" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master 1%-";
+      "XF86AudioRaiseVolume" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master 1%+";
+      "XF86AudioMute" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master toggle";
     };
 
     startup = [
@@ -87,7 +83,7 @@ in
       }
       
       {
-        command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${lockscreen-wallpaper}";
+        command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${wallpaper}";
       }
 
       {

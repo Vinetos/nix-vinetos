@@ -80,7 +80,7 @@ in
 
         modules-left = "workspaces";
         modules-center = "title";
-        modules-right = "keyboard battery network date";
+        modules-right = "keyboard network alsa battery date";
 
         separator = "";
 
@@ -119,21 +119,14 @@ in
       "module/battery" = import ./modules/battery.nix { inherit color; };
       "module/cpu" = import ./modules/cpu.nix { inherit color; };
       "module/date" = import ./modules/date.nix { inherit color; };
+      "module/alsa" = import ./modules/alsa.nix { inherit color; };
       "module/keyboard" = import ./modules/keyboard.nix { inherit color; };
       "module/sep" = import ./modules/sep.nix { inherit color; };
       "module/title" = import ./modules/title.nix { inherit color; };
       "module/workspaces" = import ./modules/workspaces.nix { inherit color;};
       # TODO: Share these properties
-      "module/wired-network" = {
-          type = "internal/network";
-          interface = interface.wired;
-      };
-
-      "module/wireless-network" = {
-          type = "internal/network";
-          interface = interface.wireless;
-      };
-
+      "module/wired-network" = { type = "internal/network"; interface = interface.wired; };
+      "module/wireless-network" = { type = "internal/network"; interface = interface.wireless; };
       "module/network" = import ./modules/network.nix { inherit color interface; };
 
      # Bars
