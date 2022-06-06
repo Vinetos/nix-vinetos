@@ -9,6 +9,8 @@
   strip-wsnumbers = true;
 
   format = "<label-state> <label-mode>";
+
+  label-visible-padding = 4;
   
   label-mode = "%mode%";
   label-mode-padding = 4;
