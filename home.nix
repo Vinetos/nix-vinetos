@@ -32,6 +32,7 @@ in
     gparted
     remmina
     pywal
+    any-nix-shell
 
     # Dev tools
     gitAndTools.gitflow
@@ -44,6 +45,7 @@ in
     curl
     p7zip
     docker-compose
+    firefox-devedition-bin
 
     # Fonts
     (pkgs.nerdfonts.override { 
