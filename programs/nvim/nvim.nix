@@ -59,6 +59,11 @@
     let g:clang_format#auto_format = 1
     let g:clang_format#detect_style_file = 1
     let g:clang_format#enable_fallback_style = 0
+
+    """
+    " Rainbow parenth
+    """
+    let g:rainbow_active = 1
   '';
 
   plugins = with pkgs.vimPlugins; [ 
@@ -75,5 +80,6 @@
     coc-pairs
     coc-yaml
     DoxygenToolkit-vim
+    rainbow
   ];
 }
