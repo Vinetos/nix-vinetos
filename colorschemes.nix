@@ -1,7 +1,7 @@
 rec {
   accent = "#FA8F38";
 
-  # Basics "automn" colorscheme
+  # Basics "beach" colorscheme
   dark = {
     black   = "#161019";
     red     = "#D5745B";
@@ -13,7 +13,7 @@ rec {
     white   = "#b5b4b8";
   };
 
-  # Basics "automn" colorscheme (light version)
+  # Basics "beach" colorscheme (light version)
   light = {
     black   = "#7e7d80";
     red     = "#D5745B";

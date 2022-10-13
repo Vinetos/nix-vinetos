@@ -16,9 +16,8 @@
     core = {
       editor = "vim";
     };
-    init = {
-      defaultBranch = "main";
-    };
+    init.defaultBranch = "main";
+    pull.rebase = true;
   };
   
 }

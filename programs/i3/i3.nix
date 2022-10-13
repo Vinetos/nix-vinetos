@@ -2,7 +2,7 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://i.redd.it/ncytwtab3f291.jpg";
+      url = "https://i.redd.it/23biso0402s91.png";
   };
 
    ws1 = "1: ";
@@ -73,6 +73,7 @@ in
       "XF86AudioLowerVolume" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master 1%-";
       "XF86AudioRaiseVolume" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master 1%+";
       "XF86AudioMute" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master toggle";
+
     };
 
     startup = [
@@ -98,4 +99,10 @@ in
     ];
 
   };
+
+
+  extraConfig = ''
+    # Remove border
+    for_window [class=".*"] border none;
+  '';
 }

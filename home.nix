@@ -20,6 +20,7 @@ in
     gnupg
     netcat
     xfce.thunar
+    tree
 
      # Tools
     i3lock-fancy
@@ -35,7 +36,6 @@ in
     # Dev tools
     gitAndTools.gitflow
     git-lfs
-    nodejs
     maven
     jdk
     unstable.jetbrains.idea-ultimate
@@ -44,6 +44,10 @@ in
     p7zip
     docker-compose
     firefox-devedition-bin
+    chromium
+    postgresql
+    nodejs
+    eudev
 
     # Fonts
     (pkgs.nerdfonts.override { 
@@ -60,6 +64,13 @@ in
     # Automatic overlay is in ~/.config/nixpkgs/overlays
     # to stay up-to-date
     discord
+
+    # Productivity
+    obsidian
+    yubikey-manager-qt
+
+    # Game
+    minecraft
   ];
 
   # Home Manager needs a bit of information about you and the
