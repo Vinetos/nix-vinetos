@@ -9,7 +9,7 @@
   shellInit = ''
     # Postgres Create Database
     pcb() {
-        psql postgresql://postgres:postgres@localhost:5432/postgres -c 'CREATE DATABASE $1'"
+        psql "postgresql://postgres:postgres@localhost:5432/postgres" -c 'CREATE DATABASE "$1"'
     }
   '';
   
