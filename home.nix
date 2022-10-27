@@ -32,22 +32,25 @@ in
     remmina
     pywal
     any-nix-shell
+    pandoc
 
     # Dev tools
     gitAndTools.gitflow
     git-lfs
     maven
     jdk
+    jd-gui
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.pycharm-professional
+    unstable.jetbrains.gateway
     curl
     p7zip
     docker-compose
     firefox-devedition-bin
-    chromium
     postgresql
     nodejs
     eudev
+    texlive.combined.scheme-full
 
     # Fonts
     (pkgs.nerdfonts.override { 
