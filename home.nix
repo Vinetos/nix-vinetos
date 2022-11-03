@@ -6,6 +6,7 @@ let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   colors = import ./colorschemes.nix;
   username = "vinetos";
+  copilot-agent-linux = pkgs.callPackage ./packages/copilot-agent-linux.nix { };
 in
 {
   imports = [
@@ -53,8 +54,8 @@ in
     texlive.combined.scheme-full
 
     # Fonts
-    (pkgs.nerdfonts.override { 
-      fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; 
+    (pkgs.nerdfonts.override {
+      fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ];
     })
 
     # Fun
@@ -81,6 +82,9 @@ in
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
+  # Replace github copilot executable by our compiled version
+  home.file."${".local/share/JetBrains/IntelliJIdea${pkgs.jetbrains.idea-ultimate.version}/${copilot-agent-linux.pname}/copilot-agent/bin/${copilot-agent-linux.name}"}".source = "${copilot-agent-linux}/bin/${copilot-agent-linux.name}";
+
   programs = {
     home-manager.enable = true;
     neovim = import ./programs/nvim/nvim.nix { inherit pkgs; };
@@ -92,7 +96,7 @@ in
   };
 
   fonts.fontconfig.enable = true;
-  
+
   services = {
     picom = import ./programs/picom/picom.nix;
     polybar = import ./programs/polybar/polybar.nix { inherit pkgs colors; };
