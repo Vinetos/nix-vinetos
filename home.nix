@@ -1,80 +1,14 @@
 { config, pkgs, lib, ... }:
 
 let
-  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-  # sudo nix-channel --update
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  colors = import ./colorschemes.nix;
-  username = "vinetos";
+  username = "vinetos"; # My username
+  colors = import ./colorschemes.nix; # Custom colorscheme
+
   copilot-agent-linux = pkgs.callPackage ./packages/copilot-agent-linux.nix { };
 in
 {
   imports = [
-    ./battery.nix
-  ];
-
-  home.packages = with pkgs; [
-    # Overview
-    htop
-    neofetch
-    feh
-    gnupg
-    netcat
-    xfce.thunar
-    tree
-
-     # Tools
-    i3lock-fancy
-    pavucontrol
-    arandr
-    networkmanagerapplet
-    libnotify
-    gparted
-    remmina
-    pywal
-    any-nix-shell
-    pandoc
-
-    # Dev tools
-    gitAndTools.gitflow
-    git-lfs
-    maven
-    jdk
-    jd-gui
-    unstable.jetbrains.idea-ultimate
-    unstable.jetbrains.pycharm-professional
-    unstable.jetbrains.gateway
-    curl
-    p7zip
-    docker-compose
-    firefox-devedition-bin
-    postgresql
-    nodejs
-    eudev
-    texlive.combined.scheme-full
-
-    # Fonts
-    (pkgs.nerdfonts.override {
-      fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ];
-    })
-
-    # Fun
-    spotify
-    thunderbird
-    flameshot
-    teams
-    postman
-
-    # Automatic overlay is in ~/.config/nixpkgs/overlays
-    # to stay up-to-date
-    discord
-
-    # Productivity
-    obsidian
-    yubikey-manager-qt
-
-    # Game
-    minecraft
+    ./services/battery.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -82,9 +16,73 @@ in
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
+  home.packages = with pkgs; [
+    # CLI-Tools
+    htop
+    neofetch
+    feh
+    gnupg
+    netcat
+    tree
+    yubikey-manager-qt
+    any-nix-shell
+    pandoc
+    libnotify
+    pywal
+    gitAndTools.gitflow
+    git-lfs
+    curl
+    p7zip
+    docker-compose
+    postgresql
+    nodejs
+    texlive.combined.scheme-full
+    jq
+
+
+     # Tools
+    pavucontrol
+    arandr
+    networkmanagerapplet
+    remmina
+    postman
+
+    # Java
+    maven
+    jdk
+    jd-gui
+    jetbrains.idea-ultimate
+
+
+    # Fonts
+    (pkgs.nerdfonts.override {
+      fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ];
+    })
+
+    # Productivity
+    obsidian
+    flameshot
+    teams
+    xfce.thunar
+    firefox-devedition-bin
+
+    # Automatic overlay is in ~/.config/nixpkgs/overlays
+    # to stay up-to-date
+    discord
+
+    # Fun
+    spotify
+
+    # Game
+    minecraft
+  ];
+
+  fonts.fontconfig.enable = true;
+
   # Replace github copilot executable by our compiled version
   home.file."${".local/share/JetBrains/IntelliJIdea${pkgs.jetbrains.idea-ultimate.version}/${copilot-agent-linux.pname}/copilot-agent/bin/${copilot-agent-linux.name}"}".source = "${copilot-agent-linux}/bin/${copilot-agent-linux.name}";
 
+  # Programs and services configurations
   programs = {
     home-manager.enable = true;
     neovim = import ./programs/nvim/nvim.nix { inherit pkgs; };
@@ -94,8 +92,6 @@ in
     starship = import ./programs/starship/starship.nix;
     git = import ./programs/git/git.nix;
   };
-
-  fonts.fontconfig.enable = true;
 
   services = {
     picom = import ./programs/picom/picom.nix;
