@@ -3,8 +3,6 @@
 let
   username = "vinetos"; # My username
   colors = import ./colorschemes.nix; # Custom colorscheme
-
-  copilot-agent-linux = pkgs.callPackage ./packages/copilot-agent-linux.nix { };
 in
 {
   imports = [
@@ -78,9 +76,6 @@ in
   ];
 
   fonts.fontconfig.enable = true;
-
-  # Replace github copilot executable by our compiled version
-  home.file."${".local/share/JetBrains/IntelliJIdea${pkgs.jetbrains.idea-ultimate.version}/${copilot-agent-linux.pname}/copilot-agent/bin/${copilot-agent-linux.name}"}".source = "${copilot-agent-linux}/bin/${copilot-agent-linux.name}";
 
   # Programs and services configurations
   programs = {
