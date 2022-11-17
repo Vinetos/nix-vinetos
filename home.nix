@@ -36,6 +36,7 @@ in
     nodejs
     texlive.combined.scheme-full
     jq
+    kaf
 
 
      # Tools
@@ -63,9 +64,10 @@ in
     teams
     xfce.thunar
     firefox-devedition-bin
+    freecad
+    kicad
 
-    # Automatic overlay is in ~/.config/nixpkgs/overlays
-    # to stay up-to-date
+    # Automatic overlay is in ~/.config/nixpkgs/overlays to stay up-to-date
     discord
 
     # Fun
@@ -85,7 +87,7 @@ in
     rofi = import ./programs/rofi/rofi.nix { inherit config colors; };
     fish = import ./programs/fish/fish.nix { inherit pkgs; };
     starship = import ./programs/starship/starship.nix;
-    git = import ./programs/git/git.nix;
+    git = import ./programs/git/git.nix { inherit pkgs; };
   };
 
   services = {
