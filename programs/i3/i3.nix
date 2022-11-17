@@ -2,7 +2,7 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://i.redd.it/23biso0402s91.png";
+      url = "https://i.redd.it/6hwn6qrqb5x91.jpg";
   };
 
    ws1 = "1: ";
