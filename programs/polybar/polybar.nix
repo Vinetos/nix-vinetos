@@ -1,7 +1,4 @@
-{ pkgs, colors }:
-
-# Inspired from Colorblocks by Aditya Shakya @adi1090x
-# https://github.com/adi1090x/polybar-themes/blob/master/simple/colorblocks
+{ pkgs, colors }: # Inspired from Colorblocks by Aditya Shakya @adi1090x https://github.com/adi1090x/polybar-themes/blob/master/simple/colorblocks
 
 let
     # todo: Import from a global colorscheme
@@ -23,8 +20,8 @@ let
 
   # Network Interfaces
   interface = {
-    wired = "enp2s0";
-    wireless = "wlo1";
+    wired = "enp5s0";
+    wireless = "wlp4s0";
   };
 
 in
