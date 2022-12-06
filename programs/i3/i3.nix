@@ -73,6 +73,10 @@ in
       "XF86AudioLowerVolume" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master 1%-";
       "XF86AudioRaiseVolume" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master 1%+";
       "XF86AudioMute" = "exec ${pkgs.alsa-utils}/bin/amixer -q sset Master toggle";
+      "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+      "XF86AudioPause"= "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+      "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+      "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
 
     };
 
