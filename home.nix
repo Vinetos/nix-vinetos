@@ -45,6 +45,7 @@ in
     networkmanagerapplet
     remmina
     postman
+    vscodium
 
     # Java
     maven
