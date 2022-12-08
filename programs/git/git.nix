@@ -30,6 +30,7 @@
       # Branch create from $2 and create tracked branch
       bc = "!sh -c 'git switch -c \"$1\" \"$2\" && git push --set-upstream origin \"$1\"' -";
       bd = "!sh -c 'git switch main && git push -d origin \"$1\" && git branch -d \"$1\"' -";
+      br = "!sh -c 'git switch \"$2\" && git pull && git switch \"$1\" && git rebase origin \"$2\"' -";
   };
   
 }

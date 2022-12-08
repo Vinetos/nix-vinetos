@@ -67,6 +67,9 @@ in
     firefox-devedition-bin
     freecad
     kicad
+    android-studio
+    flutter
+    dart
 
     # Automatic overlay is in ~/.config/nixpkgs/overlays to stay up-to-date
     discord
