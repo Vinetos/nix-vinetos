@@ -20,8 +20,8 @@ let
 
   # Network Interfaces
   interface = {
-    wired = "enp5s0";
-    wireless = "wlp4s0";
+    wired = "enp2s0";
+    wireless = "wlo1";
   };
 
 in
@@ -29,7 +29,7 @@ in
     enable = true;
   
     package = pkgs.polybar.override {
-      i3GapsSupport = true;
+      i3Support = true;
       alsaSupport = true;
     };
     
