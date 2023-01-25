@@ -3,14 +3,16 @@
 {
   enable = true;
   interactiveShellInit = ''
+    set NIX_PATH "$NIX_PATH:nixpkgs-overlays=/etc/nixos/overlays"
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
   '';
   
-  shellAliases = {
+  shellAbbrs = {
       # Nix
-      ns = "nix-shell -p ";
-      # Java
-      sjh = "set JAVA_HOME ~/.nix-profile/lib/openjdk/";
-      gsi = "git submodule update --init --recursive";
+      ns = "nix-shell";
+  };
+
+  shellAliases = {
+      rebuild = "sudo -E && echo $NIX_PATH && nixos-rebuild switch --upgrade-all";
   };
 }
