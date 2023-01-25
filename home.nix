@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{config, pkgs, lib, ...}:
 
 let
   username = "vinetos"; # My username
@@ -37,6 +37,8 @@ in
     texlive.combined.scheme-full
     jq
     kaf
+    glab
+    wireshark
 
 
      # Tools
@@ -46,13 +48,14 @@ in
     remmina
     postman
     vscodium
+    gnome-console
+    gnome.gnome-terminal
 
     # Java
     maven
     jdk
     jd-gui
     jetbrains.idea-ultimate
-
 
     # Fonts
     (pkgs.nerdfonts.override {
@@ -65,14 +68,8 @@ in
     teams
     xfce.thunar
     firefox-devedition-bin
-    freecad
-    kicad
-    android-studio
-    flutter
-    dart
-
-    # Automatic overlay is in ~/.config/nixpkgs/overlays to stay up-to-date
     discord
+    openvpn
 
     # Fun
     spotify
@@ -102,6 +99,8 @@ in
   };
 
   xsession.windowManager.i3 = import ./programs/i3/i3.nix {inherit pkgs lib; };
+
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
