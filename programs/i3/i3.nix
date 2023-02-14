@@ -2,7 +2,7 @@
 
 let
   wallpaper = builtins.fetchurl {
-      url = "https://i.redd.it/e2j1z3gzwd3a1.png";
+      url = "https://i.redd.it/9vgblz6jndea1.jpg";
   };
 
    ws1 = "1: ";
@@ -80,19 +80,16 @@ in
 
     startup = [
       {
-        command = "${pkgs.feh}/bin/feh --bg-scale ${wallpaper}";
+        command = "${pkgs.pywal}/bin/wal -i ${wallpaper}";
         always = true;
         notification = false;
       }
       
       {
-        command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ${wallpaper}";
-      }
-
-      {
         command = "systemctl --user restart polybar";
+        always = true;
       }
-
+      
       {
         command = "${pkgs.i3-gaps}/bin/i3-msg workspace ${ws1}";
         always = false;

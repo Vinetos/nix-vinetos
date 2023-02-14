@@ -39,6 +39,8 @@ in
     kaf
     glab
     wireshark
+    wireguard-tools
+    jetbrains.pycharm-professional
 
 
      # Tools
